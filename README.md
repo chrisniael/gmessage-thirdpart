@@ -67,6 +67,19 @@
 
     ```
 
+可以找一台 Linux 机器，用 Crontab  定时执行这个脚本就可以自动上报健康信息了。
+
+```bash
+su -
+crontab -e
+```
+
+比如每天 **9点** 执行 `/usr/local/bin/report-health.sh`
+
+```cfg
+0 9 * * * /usr/local/bin/report-health.sh
+```
+
 ## 其他
 
 欢迎提 issue 和 PR。
