@@ -30,7 +30,7 @@
 
     * sid + key
 
-        推荐使用这个方式，能保持手机端 App 登陆状态不失效，唯一麻烦的地方是，得手动去抓取一下账号对应的 sid 和 key 的值。抓取手机 App HTTP(S) 包的方法请自行 Google，Mac 上推荐使用 ProxyMac。
+        推荐使用这个方式，能保持手机端 App 登陆状态不失效，唯一麻烦的地方是，得手动去抓取一下账号对应的 sid 和 key 的值。抓取手机 App HTTP(S) 包的方法请自行 Google，Mac 上推荐使用 ProxyMan。
 
         使用账号密码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
 
