@@ -34,12 +34,41 @@
 
         使用账号密码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
 
-        ```HTTP
+        ```http
         GET /WFM/SecretVerify.aspx?... HTTP/1.1
         Host: mwf.corp.sdo.com
         ```
+
+        Response Example:
+
+        ```json
+        {
+            "Result":1,
+            "Message":"Success",
+            "Sid":"****",
+            "Key":"****",
+            "Ticket":"****"
+        }
+        ```
  
-        使用手机验证码登陆，则 sid 和 key 的值在哪个请求的 response 里还没有跑，待补充...
+        使用手机验证码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
+
+        ```http
+        GET /WFM/SMSVerify.aspx?appid=1614&mobile=...&verifycode=... HTTP/1.1
+        Host: mwf.corp.sdo.com
+        ```
+
+        Response Example:
+
+        ```json
+        {
+            "Result":1,
+            "Message":"Success",
+            "Sid":"****",
+            "Key":"****",
+            "Ticket":"****"
+        }
+        ```
 
 * 健康信息
 
