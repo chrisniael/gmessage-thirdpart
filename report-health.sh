@@ -13,10 +13,12 @@
 user=""
 passwd=""
 
-# Sid 和 Key 用于免去登陆流程，这样做可以不剔掉手机客户端的登陆，且可以执行这个脚本，
-# 用 HTTP 调试代理工具 (Mac: ProxyMan) 抓一下登陆请求的 Response (https://mwf.corp.sdo.com/WFM/SecretVerify.aspx)，
+# Sid 和 Key 用于免去登陆流程，这样做可以不踢掉手机客户端的登陆，且可以执行这个脚本，
+# 用 HTTP 调试代理工具 (Mac: ProxyMan) 抓一下登陆请求的 Response
+# 短信登陆：https://mwf.corp.sdo.com/WFM/SecretVerify.aspx?...
+# 账号密码登陆：https://mwf.corp.sdo.com/WFM/SMSVerify.aspx?appid=1614&mobile=...&verifycode=...
 # 找到 Response 里 Sid 和 Key 这两个数值，填写在下面，
-# 确保上面的 user 和 passwd 填空，否则脚本还是会填写的账号密码登陆
+# 确保上面的 user 和 passwd 填空，否则脚本还是会用填写的账号密码登陆
 login_response_sid=""
 login_response_key=""
 

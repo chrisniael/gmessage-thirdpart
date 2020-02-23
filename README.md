@@ -11,28 +11,31 @@
 
 * 登陆信息
 
-    ```bash
-    # 账号 + 密码登陆 (不推荐)
-    user=""
-    passwd=""
-
-    # sid + key 登陆 (推荐)
-    login_response_sid=""
-    login_response_key=""
-    ```
-
-
     这里可以使用两种方式登陆，二选一：
 
     * 账号 + 密码 (不推荐)
+
+        ```bash
+        # 账号 + 密码登陆 (不推荐)
+        user=""
+        passwd=""
+        ```
 
         账号为域账号全称，但不带域，例如：shenyu.tommy，好像有些同事的账号没有权限用账号密码登陆，只能使用手机短信验证身份的方式登陆，这样的用户只能使用 sid + key 的方式，还有就是使用账号密码的方式登陆还会导致手机 App 端登陆退出（即信只允许同时使用一个 key 来操作，新登陆会生成新的 key）
 
     * sid + key (推荐)
 
+        ```bash
+        # sid + key 登陆 (推荐)
+        login_response_sid=""
+        login_response_key=""
+        ```
+
+        使用 `sid` + `key` 登陆时，请确保 `user` 和 `passwd` 填空，否则还是会用账号 + 密码登陆。
+
         推荐使用这个方式，能保持手机端 App 登陆状态不失效，唯一麻烦的地方是，得手动去抓取一下账号对应的 sid 和 key 的值。抓取手机 App HTTP(S) 包的方法请自行 Google，Mac 上推荐使用 ProxyMan。
 
-        使用账号密码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
+        App 使用账号密码登陆，则 `sid` 和 `key` 的值在下面这个请求的 response 里：
 
         ```http
         GET /WFM/SecretVerify.aspx?... HTTP/1.1
@@ -51,7 +54,7 @@
         }
         ```
  
-        使用手机验证码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
+        App 使用手机验证码登陆，则 sid 和 key 的值在下面这个请求的 response 里：
 
         ```http
         GET /WFM/SMSVerify.aspx?appid=1614&mobile=...&verifycode=... HTTP/1.1
